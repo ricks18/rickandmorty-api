@@ -1,0 +1,299 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    background-image: url('https://wallpaperaccess.com/full/637645.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: rgba(39, 43, 51, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    border: 2px solid #97ce4c;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #97ce4c; /* Rick and Morty green color */
+    text-shadow: 0 0 10px rgba(151, 206, 76, 0.5);
+}
+
+/* Search Container Styles */
+.search-container {
+    background-color: rgba(39, 43, 51, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid #97ce4c;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #97ce4c;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#search-input:focus {
+    border-color: #ff9800;
+    outline: none;
+    box-shadow: 0 0 10px rgba(151, 206, 76, 0.5);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(151, 206, 76, 0.5);
+}
+
+#search-button {
+    background-color: #97ce4c;
+    color: #272b33;
+    flex: 1;
+}
+
+#clear-button {
+    background-color: #ff9800;
+    color: white;
+    flex: 1;
+}
+
+#export-pdf {
+    background-color: #2196F3;
+    color: white;
+    flex: 1;
+}
+
+#export-pdf:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Results Container Styles */
+.results-container {
+    background-color: rgba(39, 43, 51, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: 2px solid #97ce4c;
+}
+
+.initial-message {
+    text-align: center;
+    color: #97ce4c;
+    padding: 100px 0;
+}
+
+.character-card {
+    display: flex;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: rgba(25, 28, 34, 0.9);
+    border: 1px solid #97ce4c;
+}
+
+.character-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-right: 2px solid #97ce4c;
+}
+
+.character-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.character-name {
+    font-size: 24px;
+    color: #97ce4c;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #97ce4c;
+    padding-bottom: 5px;
+}
+
+.character-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.detail-item {
+    margin-bottom: 8px;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.status-alive {
+    color: #97ce4c;
+    font-weight: bold;
+}
+
+.status-dead {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.status-unknown {
+    color: #7f8c8d;
+    font-weight: bold;
+}
+
+.no-results {
+    text-align: center;
+    padding: 50px 0;
+    color: #f44336;
+    font-size: 18px;
+}
+
+.success-message {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(151, 206, 76, 0.2);
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #97ce4c;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .character-card {
+        flex-direction: column;
+    }
+    
+    .character-image {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #97ce4c;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .character-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Export Options Styles */
+.export-options {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(151, 206, 76, 0.3);
+}
+
+.toggle-label {
+    margin-left: 10px;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Switch Toggle Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #97ce4c;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #97ce4c;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* ... rest of the existing styles ... */
+ 
